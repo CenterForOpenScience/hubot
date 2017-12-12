@@ -1,0 +1,5 @@
+.DS_Store*
+.hubot_history
+.docker-compose.env
+node_modules/
+scripts/

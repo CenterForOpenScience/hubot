@@ -1,0 +1,7 @@
+Dockerfile
+docker-compose.yml
+*.md
+.git/
+.hubot_history
+node_modules/
+scripts/

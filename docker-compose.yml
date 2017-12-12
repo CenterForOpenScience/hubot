@@ -1,0 +1,39 @@
+version: '3'
+
+volumes:
+  redis_data_vol:
+    external: false
+
+services:
+
+  redis:
+    image: redis:alpine
+    volumes:
+      - redis_data_vol:/data
+    stdin_open: true
+    networks:
+      overlay:
+        aliases:
+          - redis
+
+  hubot:
+    build: '.'
+    depends_on:
+      - redis
+    environment:
+      REDIS_URL: redis://redis:6379/hubot
+    env_file:
+      - .docker-compose.env
+    volumes:
+      - ./scripts:/code/scripts
+    ports:
+      - 8091:8080
+    stdin_open: true
+    networks:
+      overlay:
+        aliases:
+          - hubot
+
+networks:
+  overlay:
+    driver: bridge
