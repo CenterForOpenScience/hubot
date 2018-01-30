@@ -18,7 +18,8 @@
     "hubot-pugme": "^0.1.1",
     "hubot-redis-brain": "^0.0.4",
     "hubot-rules": "^0.1.2",
-    "hubot-shipit": "^0.2.1"
+    "hubot-shipit": "^0.2.1",
+    "hubot-slack": "^4.4.0"
   },
   "engines": {
     "node": ">=8"
